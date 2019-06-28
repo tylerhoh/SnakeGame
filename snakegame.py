@@ -32,6 +32,18 @@ food.color("red")
 food.penup()
 food.goto(0, 0)
 
+# Check for collisions with borders
+if head.xcor() > 290 or head.xcor() < -290 or head.ycor() > 290:
+    time.sleep(1)
+    head.goto(0, 0)
+    head.direction = "stop"
+
+    # hide segements
+    for segment in segments:
+        segment.goto(1000, 1000)
+
+    segments.clear()
+
 
 # Functions
 
